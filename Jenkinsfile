@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh 'docker-compose build'
                 sh "git tag 1.0.${BUILD_NUMBER}"
-                sshagent(['git']) {
+                sshagent(['ssh-github']) {
                     sh "git push --tags"
                 }
                 sh "docker tag ghcr.io/frangel13v/hello-2048/hello2048:v1 ghcr.io/frangel13v/hello-2048/hello2048:1.0.${BUILD_NUMBER}"
