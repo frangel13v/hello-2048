@@ -4,4 +4,4 @@ services:
     build: .
     image: ghcr.io/frangel13v/hello-2048/hello2048:latest
     ports:
-      - "8080:80"
+      - "80:80"
